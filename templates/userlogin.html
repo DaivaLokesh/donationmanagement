@@ -1,0 +1,130 @@
+{% extends 'index.html' %}
+{% block body %}
+<html>
+
+<head>
+	<title> User login</title>
+	<link rel="stylesheet"
+		href="style.css">
+</head>
+<style>
+    /*style.css*/
+<!--body {-->
+<!--	display: flex;-->
+<!--	align-items: center;-->
+<!--	justify-content: center;-->
+<!--	font-family: sans-serif;-->
+<!--	line-height: 1.5;-->
+<!--	min-height: 100vh;-->
+<!--	background: #f3f3f3;-->
+<!--	flex-direction: column;-->
+<!--	margin: 0;-->
+<!--}-->
+body{
+<!--display:flex;-->
+align-items:center;
+}
+
+.main {
+    align-items:center;
+    font-family: sans-serif;
+    line-height: 1.5;
+	background-color: #fff;
+	justify-content: center;
+	border-radius: 15px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+	padding: 10px 20px;
+	transition: transform 0.2s;
+	width: 500px;
+	text-align: center;
+	flex-direction: column;
+	margin-left:450px;
+	margin-top:150px;
+}
+
+h1 {
+	color: #4CAF50;
+}
+
+label {
+	display: block;
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	text-align: left;
+	color: #555;
+	font-weight: bold;
+}
+
+
+input {
+	display: block;
+	width: 100%;
+	margin-bottom: 15px;
+	padding: 10px;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+button {
+	padding: 15px;
+	border-radius: 10px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	border: none;
+	color: white;
+	cursor: pointer;
+	background-color: #4CAF50;
+	width: 100%;
+	font-size: 16px;
+}
+
+.wrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+</style>
+<body>
+	<div class="main">
+		<h1>User login</h1>
+		<h3>Enter your login credentials</h3>
+		<form action="{% url 'checkuserlogin' %}" method="POST">
+			{% csrf_token %}
+			<label for="first">
+				Email
+			</label>
+			<input type="email"
+				id="first"
+				name="email"
+				placeholder="Enter your Email" required>
+
+			<label for="password">
+				Password:
+			</label>
+			<input type="password"
+				id="password"
+				name="pwd"
+				placeholder="Enter your Password" required>
+
+			<div class="wrap">
+				<button type="submit"
+						onclick="solve()">
+					Submit
+				</button>
+			</div>
+		</form>
+		<p>Not registered?
+			<a href="#"
+			style="text-decoration: none;">
+				Create an account
+			</a>
+		</p>
+	</div>
+</body>
+
+</html>
+
+{% endblock %}

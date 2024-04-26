@@ -1,0 +1,16 @@
+{% extends 'donarhome.html' %}
+
+{% block content %}
+  {% if status %}
+  <div class="container">
+    <h2 align="center">Thanks. Your Payment was Successfull</h2>
+  </div>
+  {% else %}
+  <div class="container">
+    <h2 align="center">Your Payment was unsuccessfull</h2>
+  </div>
+  {% endif %}
+  <div class="container">
+    <h2 align="center"><a href="{% url 'donardonations' %}">Buy One more</a></h2>
+  </div>
+{% endblock %}

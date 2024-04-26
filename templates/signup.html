@@ -1,0 +1,177 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<!--<head>-->
+<!--    <h3 align="center" style="color:green" >{{msg}}</h3>-->
+
+<!--    <title>Signup Form</title>-->
+<!--</head>-->
+
+
+<!--<div style="background-color:white">-->
+
+<!--    <h1 align="center">Signup Form</h1>-->
+<!--<center>-->
+<!--    <form method="post" >-->
+<!--    {% csrf_token %}-->
+<!--      <div class="form-group col-md-4 mb-0">-->
+<!--          <labe>Enter Fullname</labe>-->
+<!--        {{ form.fullname }}-->
+<!--      </div>-->
+<!--      <div class="form-group col-md-4 mb-0">-->
+<!--          <labe>Enter email</labe>-->
+<!--        {{ form.email }}-->
+<!--      </div>-->
+<!--        <div class="form-group col-md-4 mb-0">-->
+<!--        <label>Enter password</label>-->
+<!--    {{ form.password }}-->
+<!--        </div>-->
+<!--        <div class="form-group col-md-4 mb-0">-->
+<!--        <label>Enter address</label>-->
+<!--    {{ form.address }}-->
+<!--        </div>-->
+<!--      <div class="form-group col-md-4 mb-0">-->
+<!--          <label>Enter State</label>-->
+<!--        {{ form.state }}-->
+<!--      </div>-->
+<!--      <div class="form-group col-md-2 mb-0">-->
+<!--          <label>Enter region</label>-->
+<!--        {{ form.region }}-->
+<!--      </div>-->
+<!--      <div class="form-group col-md-2 mb-0">-->
+<!--          <label>Enter Contact</label>-->
+<!--        {{ form.contact}}-->
+<!--      </div>-->
+<!--        <div class="form-group col-md-2 mb-0">-->
+<!--            <label>Select Gender</label>-->
+<!--        {{ form.gender }}-->
+<!--      </div>-->
+
+<!--    {{ form.check_me_out}}-->
+<!--        <br>-->
+<!--        <br>-->
+<!--<div align="center">-->
+<!--    <button type="submit" class="btn btn-primary" >Sign in</button>-->
+<!--    </div>-->
+<!--  </form>-->
+<!--    </center>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--</div>-->
+
+
+<!--</body>-->
+{% block body %}
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: green;
+        }
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right:30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        label {
+            font-weight: bold;
+            width: 150px; /* Adjust as needed */
+            text-align: right;
+            margin-right: 20px;
+        }
+        input, select {
+            flex: 1;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        select{
+        width:200px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <title>Signup Form</title>
+</head>
+<div class="row">
+<div class="column left">
+    <img src="https://previews.123rf.com/images/faysalfarhan/faysalfarhan1605/faysalfarhan160502126/56521862-sign-up-member-icon-green-glossy-round-button.jpg" width="400px" height="350px">
+</div>
+<div class="container" class="colum rigth" >
+    <h1>Signup Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_fullname">Enter Fullname:</label>
+            {{ form.fullname }}
+        </div>
+        <div class="form-group">
+            <label for="id_email">Enter Email:</label>
+            {{ form.email }}
+        </div>
+        <div class="form-group">
+            <label for="id_password">Enter Password:</label>
+            {{ form.password }}
+        </div>
+        <div class="form-group">
+            <label for="id_address">Enter Address:</label>
+            {{ form.address }}
+        </div>
+        <div class="form-group">
+            <label for="id_state">Enter State:</label>
+            {{ form.state }}
+        </div>
+        <div class="form-group">
+            <label for="id_region">Enter Region:</label>
+            {{ form.region }}
+        </div>
+        <div class="form-group">
+            <label for="id_contact">Enter Contact:</label>
+            {{ form.contact}}
+        </div>
+        <div class="form-group">
+            <label for="id_gender" >Select Gender:</label>
+            {{ form.gender }}
+        </div>
+        {{ form.check_me_out}}
+        <br>
+        <div style="text-align: center;">
+            <button type="submit">Sign in</button>
+        </div>
+    </form>
+</div>
+    </div>
+{% endblock %}
+

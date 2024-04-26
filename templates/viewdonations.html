@@ -1,0 +1,17 @@
+{% extends 'userhome.html'  %}
+{% load static %}
+{% block body %}
+<center>
+
+    <div class="card border-success mb-4" style="max-width: 80rem;display:flex;margin-left:40px">
+  <div class="card-header bg-transparent border-success" align="left">
+  <img class="card-img-top" src="{% static 'images/profile.jpeg' %}" alt="Card image cap">
+  </div>
+<div class="card-header bg-transparent border-success" style="margin-left:330px " align="right" >
+     <h4>{{useremail}}</h4>
+    </div>
+</div>
+</center>
+
+
+{% endblock %}
